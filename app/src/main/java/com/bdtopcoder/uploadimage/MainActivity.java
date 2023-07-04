@@ -45,7 +45,7 @@ YouTube - https://www.youtube.com/@AwesomeDesigner*/
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-    Button upload_btn;
+    Button upload_btn,showInfo;
     EditText name;
     ProgressBar progressBar;
 
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView);
         upload_btn = findViewById(R.id.upload_btn);
+        showInfo = findViewById(R.id.showInfo);
         name = findViewById(R.id.name);
         progressBar = findViewById(R.id.progressBar);
 
@@ -123,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
             requestQueue.add(stringRequest);
 
+        });
+
+        showInfo.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this,DetailsActivty.class));
         });
 
 
